@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semáforo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div>
+        <img src="./img/desligado.png" id="img" />
+      </div>
+      <div id="buttons">
+        <button id="vermelho" class="button">Vermelho</button>
+        <button id="amarelo" class="button">Amarelo</button>
+        <button id="verde" class="button">Verde</button>
+        <button id="automatico" class="button">Automático</button>
+      </div>
+    </main>
+
+    <script>
+      let indexCor = 0;
+      const img = document.querySelector("#img");
+      const buttons = document.querySelector("#buttons");
+      let intervalId = null
+
+      const trafego = (event) => {
+        parar();
+        ligar[event.target.id]();
+      };
+
+      const nextIndex = () => {
+        indexCor < 2 ? ++indexCor : (indexCor = 0);
+      };
+
+      const trocarCor = () => {
+        const cores = ["vermelho", "amarelo", "verde"];
+        const cor = cores[indexCor];
+        ligar[cor]();
+        nextIndex();
+      };
+
+      const parar = () => {
+        clearInterval(intervalId);
+      };
+
+      const ligar = {
+        vermelho: function red() {
+          img.src = "./img/vermelho.png";
+        },
+        amarelo: function amarelo() {
+          img.src = "./img/amarelo.png";
+        },
+
+        verde: function verde() {
+          img.src = "./img/verde.png";
+        },
+
+        automatico: () => intervalId = setInterval(trocarCor, 1000)
+      };
+
+      buttons.addEventListener("click", trafego);
+    </script>
+  </body>
+</html>
