@@ -8,8 +8,9 @@ const sons = {
   G: "ride.wav",
   H: "snare.wav",
   J: "tink.wav",
-  K: "tom.wav"
+  K: "tom.wav",
 };
+
 
 function criarDiv(text) {
   const div = document.createElement("div");
