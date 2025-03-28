@@ -1,0 +1,76 @@
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.home-body {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  max-width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  width: 100%;
+}
+.inputs .nome,
+.inputs .altura,
+.inputs .peso {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.inputs label {
+  width: 30%;
+  text-align: left;
+}
+
+.inputs input {
+  width: 70%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+ button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0077cc;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+     button:hover {
+    background-color: #005fa3;
+  }
+  hr {
+    width: 100%;
+    
+  }
+  .final {
+    text-align: center;
+    width: 100%;
+    
+  }
