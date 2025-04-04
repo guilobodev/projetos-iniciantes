@@ -8,12 +8,11 @@ Os projetos foram baseados na [playlist de iniciantes do Fernando Leonid](https:
 
 - **Projeto 1**: [Calculadora para iniciantes](./calculadora/)
 - **Projeto 2**: [Calculadora para o IMC](./calculadora-imc/)
-- **Projeto 3**: [Lista de Tarefas (To-Do List)](./Drum-kit/)
-- **Projeto 4**: [Lista de Tarefas (To-Do List)](./lampada/)
-- **Projeto 5**: [Lista de Tarefas (To-Do List)](./lampada/)
-- **Projeto 6**: [Lista de Tarefas (To-Do List)](./semaforo/)
-- **Projeto 7**: [Lista de Tarefas (To-Do List)](./slidesShow/)
-- **Projeto 8**: [Lista de Tarefas (To-Do List)](./todo-list/)
+- **Projeto 3**: [Bateria](./Drum-kit/)
+- **Projeto 4**: [Efeitos sobre uma lampada](./lampada/)
+- **Projeto 5**: [Semáforo automático](./semaforo/)
+- **Projeto 6**: [Um carrosel de Imagens](./slidesShow/)
+- **Projeto 7**: [Lista de Tarefas (To-Do List)](./todo-list/)
 
 ## Como Usar
 
