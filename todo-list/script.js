@@ -1,14 +1,11 @@
 "use strict";
 
-const input = document.querySelector("#newItem");
+// let banco = [
+// ];
 
-let banco = [
-];
-
-function getBanco () {
-  localStorage.getItem('todoList') ?? [];
-  
-}
+const getBanco = () => JSON.parse(localStorage.getItem("todoList")) ?? [];
+const setBanco = (banco) =>
+  localStorage.setItem("todoList", JSON.stringify(banco));
 
 function criarItem(value, status, indice) {
   const item = document.createElement("label");
@@ -29,14 +26,17 @@ function limparTela() {
 }
 function atualizarTela() {
   limparTela();
-  banco.forEach((item, indice) => criarItem(item.tarefa,item.status, indice));
+  const banco = getBanco();
+  banco.forEach((item, indice) => criarItem(item.tarefa, item.status, indice));
 }
 
 function inserirItem(event) {
-  let valor = input.value;
+  let valor = event.target.value;
   const tecla = event.key;
   if (tecla === "Enter") {
-    banco.push({ 'tarefa': valor, 'status': "" });
+    const banco = getBanco();
+    banco.push({ tarefa: valor, status: "" });
+    setBanco(banco);
     atualizarTela();
     event.target.value = "";
   }
@@ -44,26 +44,29 @@ function inserirItem(event) {
 
 function clickItem(event) {
   const elemento = event.target;
-  if (elemento.type === 'button'){
-    let indice = elemento.dataset.indice
-    removerIndice(indice)
-  }
-  else if (elemento.type === 'checkbox') {
-     let indice = elemento.dataset.indice
-     atualizarItem(indice)
+  if (elemento.type === "button") {
+    let indice = elemento.dataset.indice;
+    removerIndice(indice);
+  } else if (elemento.type === "checkbox") {
+    let indice = elemento.dataset.indice;
+    atualizarItem(indice);
   }
 }
 
-function removerIndice(indice){
+function removerIndice(indice) {
+  const banco = getBanco();
   banco.splice(indice, 1);
-  atualizarTela()
-  console.log(banco)
+  setBanco(banco);
+  atualizarTela();
+  console.log(banco);
 }
 
 function atualizarItem(indice) {
-  banco[indice].status = banco[indice].status === '' ? 'checked' : '';
-  atualizarTela()
-  console.log(banco)
+  const banco = getBanco();
+  banco[indice].status = banco[indice].status === "" ? "checked" : "";
+  setBanco(banco);
+  atualizarTela();
+  console.log(banco);
 }
 
 document.querySelector("#newItem").addEventListener("keypress", inserirItem);
