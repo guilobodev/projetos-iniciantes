@@ -12,7 +12,7 @@ Este repositório contém projetos simples e introdutórios para quem está come
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/projetos-iniciantes.git
+    git clone https://github.com/guilobodev/projetos-iniciantes.git
     ```
 2. Navegue até o diretório do projeto desejado:
     ```bash
